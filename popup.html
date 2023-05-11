@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="popup.css">
+    </head>
+    <body style="overflow-y: auto;">
+        <div id="main">
+            <div id="header">
+                <button id="load-to-new-mode-button" class="button icon-button">
+                    <span class="material-icons-font">file_download</span>
+                    <span>&nbsp;Load to new Mode</span>
+                </button>
+                <a id="go-to-setting-page" href="settingPage.html" target="_blank" class="button icon-button material-icons-font">
+                    <span class="material-icons-font">settings</span>
+                </a>
+                <button id="open-sync-panel" class="button icon-button" hidden>
+                    <span class="material-icons-font">sync</span>
+                </button>
+                <div id="create-new-mode-panel" hidden>
+                    <div class="group-editor-main">
+                        <p>Group's title</p>
+                        <input type="text" class="group-title-editor" id="new-mode-title-input" maxlength="20"/>
+                        <div class="group-editor-area websites-area">
+                            <p>Group's websites</p>
+                            <ul></ul>
+                        </div>
+                    </div>
+                    <button class="button icon-button save">
+                        <span class="material-icons-font">save_alt</span>
+                        <span>Save</span>
+                    </button>
+                    <button class="button icon-button cancel">
+                        <span class="material-icons-font">close</span>
+                        <span>Cancel</span>
+                    </button>
+                </div>
+                <div id="sync-panel" hidden>
+                    <ul>
+                        <li>
+                            <button id="sync-push" class="button icon-button">
+                                <span class="material-icons-font">cloud_upload</span>
+                                <span>Push</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button id="sync-pull" class="button icon-button">
+                                <span class="material-icons-font">save_alt</span>
+                                <span>Pull</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button id="sync-cancel" class="button icon-button">
+                                <span class="material-icons-font">close</span>
+                                <span>Cancel</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="groups-viewer">
+                <div id="default-mode" class="group">
+                    <div class="group-normal">
+                        <button id="return-to-default-mode" class="switch-mode-on button">Default Mode</button>
+                    </div>
+                </div>
+                <template id="group-template">
+                    <div class="group">
+                        <div class="group-normal">
+                            <button class="switch-mode-on button group-title"></button>
+                            <button class="open-editor button icon-button group-open-edit-panel"><span class="material-icons-font">expand_more</span></button>
+                        </div>
+                        <div class="group-editor">
+                            <div class="group-editor-header">
+                                <button class="button icon-button save-and-close">
+                                    <span class="material-icons-font">save</span>
+                                    <span>Save and close</span>
+                                </button>
+                                <button class="button icon-button only-close">
+                                    <span class="material-icons-font">close</span>
+                                    <span>Close</span>
+                                </button>
+                                <button class="button icon-button remove">
+                                    <span class="material-icons-font">delete_forever</span>
+                                    <span>Remove</span>
+                                </button>
+                            </div>
+                            <div class="group-editor-main">
+                                <p>Group's title</p>
+                                <input type="text" class="group-title-editor" maxlength="20"/>
+                                <div class="group-editor-area websites-area">
+                                    <p>Group's websites</p>
+                                    <div>
+                                        <button class="button icon-button import">
+                                            <span class="material-icons-font">save_alt</span>
+                                            <span>Import</span>
+                                        </button>
+                                    </div>
+                                    <ul>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group-delete-alert" hidden>
+                            <span>Are you sure to remove this mode?</span>
+                            <span>This mode can not be restored after you delete.</span>
+                            <button class="remove-ok">Delete it</button>
+                            <button class="remove-cancel">Go back</button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <template id="group-website-template">
+            <li>
+                <div class="website-header">
+                    <img class="favicon"/>
+                    <span class="website-title"></span>
+                </div>
+                <button class="floor-button material-icons-font remove-website-from-mode">close</button>
+            </li>
+        </template>
+        <script src="popup.js"></script>
+    </body>
+</html>

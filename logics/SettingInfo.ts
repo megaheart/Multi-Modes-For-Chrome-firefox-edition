@@ -1,0 +1,3 @@
+class SettingInfo{
+    ignoreWebsites:string[];
+}

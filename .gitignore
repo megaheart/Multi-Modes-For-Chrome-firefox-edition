@@ -1,0 +1,6 @@
+.js.map
+/node_modules
+/package-lock.json
+/web-ext-artifacts
+/web-ext
+*.zip

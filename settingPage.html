@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="settingPage.css"/>
+    </head>
+    <body>
+        <div id="main">
+            <div id="header">
+                <button id="import-backup" class="button icon-button">
+                    <span class="material-icons-font">system_update_alt</span>
+                    <span>Import Backup</span>
+                </button>
+                <button id="export-backup" class="button icon-button">
+                    <span class="material-icons-font">publish</span>
+                    <span>Export Backup</span>
+                </button>
+            </div>
+            <div id="edit-ingore-websites">
+                <p>Add Ignore Website: (eg: soundcloud.com, open.spotify.com)</p>
+                <div id="input-ingore-websites">
+                    <input/>
+                    <button id="add-ingore-website" class="button icon-button">
+                        <span class="material-icons-font">add</span>
+                        <span>Add</span>
+                    </button>
+                </div>
+                <ul></ul>
+                <template id="ignore-website-template">
+                    <li>
+                        <div class="website-header">
+                            <img class="favicon"/>
+                            <span class="website-title"></span>
+                        </div>
+                        <button class="floor-button material-icons-font remove-website-from-mode">close</button>
+                    </li>
+                </template>
+            </div>
+        </div>
+        <script src="settingPage.js"></script>
+    </body>
+</html>
